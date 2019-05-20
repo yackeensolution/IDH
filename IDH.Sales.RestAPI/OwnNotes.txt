@@ -1,0 +1,4 @@
+﻿- create table that will hold the visitplan till it be approved
+- Remember to prevent user from adding visits to approved visitplan
+- Don't delete data tranfered to CRM, and create a deleted column to descriminate deleted 
+- You should send only date without time to date parameter in GetVisits API in order to match data

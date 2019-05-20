@@ -1,0 +1,2 @@
+﻿- Unplanned visits will inserted directly to the CRM 
+- Unplanned Visits will not have VisitCode

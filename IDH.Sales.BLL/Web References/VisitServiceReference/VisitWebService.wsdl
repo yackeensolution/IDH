@@ -1,0 +1,1322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="AddtestFeedBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_GUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_TestGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_FeedbackID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddtestFeedBackResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddvisitStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_GUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StockItemGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Qnty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddvisitStockResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMissedVisitList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Year" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMissedVisitListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMissedVisitListResult" type="tns:ArrayOfYKN_P_GetMissedVisitList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetMissedVisitList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetMissedVisitList_Result" nillable="true" type="tns:YKN_P_GetMissedVisitList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetMissedVisitList_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VisitId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_VisitDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="professional" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="organization" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDashInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDashInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDashInfoResult" type="tns:ArrayOfYKN_P_GetDashInfo_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetDashInfo_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetDashInfo_Result" nillable="true" type="tns:YKN_P_GetDashInfo_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetDashInfo_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TargetVisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualVisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TargetAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AVT" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TargetAVT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plannedvisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Missedvisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalStock" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalBalance" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAVTDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAVTDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAVTDetailsResult" type="tns:ArrayOfYKN_P_GetAVTDetails_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetAVTDetails_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetAVTDetails_Result" nillable="true" type="tns:YKN_P_GetAVTDetails_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetAVTDetails_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SalesRepName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectManagerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitsNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AVT" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalTime" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTargetAchievedDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTargetAchievedDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTargetAchievedDetailsResult" type="tns:ArrayOfYKN_P_GetTargetAchievedDetails_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetTargetAchievedDetails_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetTargetAchievedDetails_Result" nillable="true" type="tns:YKN_P_GetTargetAchievedDetails_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetTargetAchievedDetails_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="salesRepName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectManagerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_TargetVisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_ActualVisits" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_TargetAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_ActualAmount" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMapLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Day" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_SalesRepGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMapLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMapLocationResult" type="tns:ArrayOfYKN_P_GetMapLocation_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetMapLocation_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetMapLocation_Result" nillable="true" type="tns:YKN_P_GetMapLocation_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetMapLocation_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSXcheckIn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSYcheckin" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlanVisits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanVisitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanVisitsResult" type="tns:ArrayOfYKN_P_GetVisitByMonth_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetVisitByMonth_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetVisitByMonth_Result" nillable="true" type="tns:YKN_P_GetVisitByMonth_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetVisitByMonth_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="salesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="salesRepID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_mdsalesrepvisitId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_VisitLevel" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="organizationid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="professionalid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="specility" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSPosX" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSPosY" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_PhoneNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitGUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitLevel" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddVisitHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_GUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitCode" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProfessionalGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_OrgGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitLevel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGUID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVisitHeaderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateVisitDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StartLat" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_EndLat" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Startlong" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Endlong" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Visitstatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_FeedBackId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_StartAdress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_EndAdress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGUID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVisitDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMonthPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonthPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonthPlanResult" type="tns:ArrayOfYKN_P_GetMonthPlan_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetMonthPlan_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetMonthPlan_Result" nillable="true" type="tns:YKN_P_GetMonthPlan_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetMonthPlan_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="new_ProfessionalNameId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="professionalName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_OrganizationNameId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="orgName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_VisitDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="visitLevelId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitCode" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVisitsByDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Day" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVisitsByDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVisitsByDayResult" type="tns:ArrayOfYKN_P_GetVisitByDay_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetVisitByDay_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetVisitByDay_Result" nillable="true" type="tns:YKN_P_GetVisitByDay_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetVisitByDay_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="new_mdrepmasterId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="salesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_mdsalesrepvisitId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="specility" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSPosX" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_GPSPosY" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_PhoneNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisitGUID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="visitComment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_VisitFeedback" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVisitTests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGUID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVisitTestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVisitTestsResult" type="tns:ArrayOfYKN_P_GetVisitTests_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetVisitTests_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetVisitTests_Result" nillable="true" type="tns:YKN_P_GetVisitTests_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetVisitTests_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TestID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitFeedback" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestComment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVisitsByStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGUID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVisitsByStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVisitsByStockResult" type="tns:ArrayOfYKN_P_GetVisitStock_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetVisitStock_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetVisitStock_Result" nillable="true" type="tns:YKN_P_GetVisitStock_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetVisitStock_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTestList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestListResult" type="tns:ArrayOfYKN_P_GetTestList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetTestList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetTestList_Result" nillable="true" type="tns:YKN_P_GetTestList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetTestList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TestName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TestGUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddVisitStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_GUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StockItemGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Qnty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGUID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVisitStockResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCustomerReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StartDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RuleID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerReportResult" type="tns:ArrayOfYKN_P_GetCustomerReport_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetCustomerReport_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetCustomerReport_Result" nillable="true" type="tns:YKN_P_GetCustomerReport_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetCustomerReport_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VisitDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_VisitFeedback" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_CommentOntheVisit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="testname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="testFeedback" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestComment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="salesrepname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="salesrepid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="managerid" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ResceduleVisit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResceduleVisitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangeVisitStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_VisitStatus" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeVisitStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCancelReason">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCancelReasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCancelReasonResult" type="tns:ArrayOfYKN_PH_GetCancelReasons_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_PH_GetCancelReasons_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_PH_GetCancelReasons_Result" nillable="true" type="tns:YKN_PH_GetCancelReasons_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_PH_GetCancelReasons_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFeedbackList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFeedbackListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFeedbackListResult" type="tns:ArrayOfYKN_PH_GetFeedbacklist_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_PH_GetFeedbacklist_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_PH_GetFeedbacklist_Result" nillable="true" type="tns:YKN_PH_GetFeedbacklist_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_PH_GetFeedbacklist_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Feedback" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMinMaxPlan">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMinMaxPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMinMaxPlanResult" type="tns:ArrayOfYKN_PH_GetMaxMinPlan_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_PH_GetMaxMinPlan_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_PH_GetMaxMinPlan_Result" nillable="true" type="tns:YKN_PH_GetMaxMinPlan_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_PH_GetMaxMinPlan_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MinVisits" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxVisits" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVisitStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVisitStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVisitStatusResult" type="tns:ArrayOfYKN_PH_GetVisitStatusList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_PH_GetVisitStatusList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_PH_GetVisitStatusList_Result" nillable="true" type="tns:YKN_PH_GetVisitStatusList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_PH_GetVisitStatusList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VisitStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDetailedAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_SalesRepGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDetailedAmountResult" type="tns:ArrayOfYKN_P_GetDetailedRevReport_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetDetailedRevReport_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetDetailedRevReport_Result" nillable="true" type="tns:YKN_P_GetDetailedRevReport_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetDetailedRevReport_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SalesRepID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="professionalGuid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="speciality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_MobileNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Class" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthlyRevenue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddtestFeedBackSoapIn">
+    <wsdl:part name="parameters" element="tns:AddtestFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="AddtestFeedBackSoapOut">
+    <wsdl:part name="parameters" element="tns:AddtestFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddvisitStockSoapIn">
+    <wsdl:part name="parameters" element="tns:AddvisitStock" />
+  </wsdl:message>
+  <wsdl:message name="AddvisitStockSoapOut">
+    <wsdl:part name="parameters" element="tns:AddvisitStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMissedVisitListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMissedVisitList" />
+  </wsdl:message>
+  <wsdl:message name="GetMissedVisitListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMissedVisitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDashInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDashInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDashInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDashInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAVTDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAVTDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAVTDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAVTDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetAchievedDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTargetAchievedDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTargetAchievedDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTargetAchievedDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMapLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMapLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetMapLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMapLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanVisitsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanVisits" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanVisitsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanVisitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVisitHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddVisitHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddVisitHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddVisitHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVisitDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVisitDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVisitDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVisitDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMonthPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMonthPlan" />
+  </wsdl:message>
+  <wsdl:message name="GetMonthPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMonthPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitsByDaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetVisitsByDay" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitsByDaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetVisitsByDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitTestsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVisitTests" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitTestsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVisitTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitsByStockSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVisitsByStock" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitsByStockSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVisitsByStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestList" />
+  </wsdl:message>
+  <wsdl:message name="GetTestListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVisitStockSoapIn">
+    <wsdl:part name="parameters" element="tns:AddVisitStock" />
+  </wsdl:message>
+  <wsdl:message name="AddVisitStockSoapOut">
+    <wsdl:part name="parameters" element="tns:AddVisitStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerReport" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResceduleVisitSoapIn">
+    <wsdl:part name="parameters" element="tns:ResceduleVisit" />
+  </wsdl:message>
+  <wsdl:message name="ResceduleVisitSoapOut">
+    <wsdl:part name="parameters" element="tns:ResceduleVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeVisitStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeVisitStatus" />
+  </wsdl:message>
+  <wsdl:message name="ChangeVisitStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeVisitStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelReasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCancelReason" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelReasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCancelReasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeedbackListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeedbackList" />
+  </wsdl:message>
+  <wsdl:message name="GetFeedbackListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeedbackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinMaxPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinMaxPlan" />
+  </wsdl:message>
+  <wsdl:message name="GetMinMaxPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinMaxPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVisitStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetVisitStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVisitStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailedAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailedAmountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VisitWebServiceSoap">
+    <wsdl:operation name="AddtestFeedBack">
+      <wsdl:input message="tns:AddtestFeedBackSoapIn" />
+      <wsdl:output message="tns:AddtestFeedBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddvisitStock">
+      <wsdl:input message="tns:AddvisitStockSoapIn" />
+      <wsdl:output message="tns:AddvisitStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissedVisitList">
+      <wsdl:input message="tns:GetMissedVisitListSoapIn" />
+      <wsdl:output message="tns:GetMissedVisitListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDashInfo">
+      <wsdl:input message="tns:GetDashInfoSoapIn" />
+      <wsdl:output message="tns:GetDashInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVTDetails">
+      <wsdl:input message="tns:GetAVTDetailsSoapIn" />
+      <wsdl:output message="tns:GetAVTDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetAchievedDetails">
+      <wsdl:input message="tns:GetTargetAchievedDetailsSoapIn" />
+      <wsdl:output message="tns:GetTargetAchievedDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapLocation">
+      <wsdl:input message="tns:GetMapLocationSoapIn" />
+      <wsdl:output message="tns:GetMapLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanVisits">
+      <wsdl:input message="tns:GetPlanVisitsSoapIn" />
+      <wsdl:output message="tns:GetPlanVisitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitHeader">
+      <wsdl:input message="tns:AddVisitHeaderSoapIn" />
+      <wsdl:output message="tns:AddVisitHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVisitDetails">
+      <wsdl:input message="tns:UpdateVisitDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateVisitDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthPlan">
+      <wsdl:input message="tns:GetMonthPlanSoapIn" />
+      <wsdl:output message="tns:GetMonthPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByDay">
+      <wsdl:input message="tns:GetVisitsByDaySoapIn" />
+      <wsdl:output message="tns:GetVisitsByDaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitTests">
+      <wsdl:input message="tns:GetVisitTestsSoapIn" />
+      <wsdl:output message="tns:GetVisitTestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByStock">
+      <wsdl:input message="tns:GetVisitsByStockSoapIn" />
+      <wsdl:output message="tns:GetVisitsByStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestList">
+      <wsdl:input message="tns:GetTestListSoapIn" />
+      <wsdl:output message="tns:GetTestListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitStock">
+      <wsdl:input message="tns:AddVisitStockSoapIn" />
+      <wsdl:output message="tns:AddVisitStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerReport">
+      <wsdl:input message="tns:GetCustomerReportSoapIn" />
+      <wsdl:output message="tns:GetCustomerReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResceduleVisit">
+      <wsdl:input message="tns:ResceduleVisitSoapIn" />
+      <wsdl:output message="tns:ResceduleVisitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVisitStatus">
+      <wsdl:input message="tns:ChangeVisitStatusSoapIn" />
+      <wsdl:output message="tns:ChangeVisitStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelReason">
+      <wsdl:input message="tns:GetCancelReasonSoapIn" />
+      <wsdl:output message="tns:GetCancelReasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackList">
+      <wsdl:input message="tns:GetFeedbackListSoapIn" />
+      <wsdl:output message="tns:GetFeedbackListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinMaxPlan">
+      <wsdl:input message="tns:GetMinMaxPlanSoapIn" />
+      <wsdl:output message="tns:GetMinMaxPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitStatus">
+      <wsdl:input message="tns:GetVisitStatusSoapIn" />
+      <wsdl:output message="tns:GetVisitStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedAmount">
+      <wsdl:input message="tns:GetDetailedAmountSoapIn" />
+      <wsdl:output message="tns:GetDetailedAmountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VisitWebServiceSoap" type="tns:VisitWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddtestFeedBack">
+      <soap:operation soapAction="http://tempuri.org/AddtestFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddvisitStock">
+      <soap:operation soapAction="http://tempuri.org/AddvisitStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissedVisitList">
+      <soap:operation soapAction="http://tempuri.org/GetMissedVisitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashInfo">
+      <soap:operation soapAction="http://tempuri.org/GetDashInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVTDetails">
+      <soap:operation soapAction="http://tempuri.org/GetAVTDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetAchievedDetails">
+      <soap:operation soapAction="http://tempuri.org/GetTargetAchievedDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapLocation">
+      <soap:operation soapAction="http://tempuri.org/GetMapLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanVisits">
+      <soap:operation soapAction="http://tempuri.org/GetPlanVisits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitHeader">
+      <soap:operation soapAction="http://tempuri.org/AddVisitHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVisitDetails">
+      <soap:operation soapAction="http://tempuri.org/UpdateVisitDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthPlan">
+      <soap:operation soapAction="http://tempuri.org/GetMonthPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByDay">
+      <soap:operation soapAction="http://tempuri.org/GetVisitsByDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitTests">
+      <soap:operation soapAction="http://tempuri.org/GetVisitTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByStock">
+      <soap:operation soapAction="http://tempuri.org/GetVisitsByStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestList">
+      <soap:operation soapAction="http://tempuri.org/GetTestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitStock">
+      <soap:operation soapAction="http://tempuri.org/AddVisitStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerReport">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResceduleVisit">
+      <soap:operation soapAction="http://tempuri.org/ResceduleVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVisitStatus">
+      <soap:operation soapAction="http://tempuri.org/ChangeVisitStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelReason">
+      <soap:operation soapAction="http://tempuri.org/GetCancelReason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackList">
+      <soap:operation soapAction="http://tempuri.org/GetFeedbackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinMaxPlan">
+      <soap:operation soapAction="http://tempuri.org/GetMinMaxPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitStatus">
+      <soap:operation soapAction="http://tempuri.org/GetVisitStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedAmount">
+      <soap:operation soapAction="http://tempuri.org/GetDetailedAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VisitWebServiceSoap12" type="tns:VisitWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddtestFeedBack">
+      <soap12:operation soapAction="http://tempuri.org/AddtestFeedBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddvisitStock">
+      <soap12:operation soapAction="http://tempuri.org/AddvisitStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissedVisitList">
+      <soap12:operation soapAction="http://tempuri.org/GetMissedVisitList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetDashInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVTDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetAVTDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetAchievedDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetTargetAchievedDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapLocation">
+      <soap12:operation soapAction="http://tempuri.org/GetMapLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanVisits">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanVisits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitHeader">
+      <soap12:operation soapAction="http://tempuri.org/AddVisitHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVisitDetails">
+      <soap12:operation soapAction="http://tempuri.org/UpdateVisitDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthPlan">
+      <soap12:operation soapAction="http://tempuri.org/GetMonthPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByDay">
+      <soap12:operation soapAction="http://tempuri.org/GetVisitsByDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitTests">
+      <soap12:operation soapAction="http://tempuri.org/GetVisitTests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsByStock">
+      <soap12:operation soapAction="http://tempuri.org/GetVisitsByStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestList">
+      <soap12:operation soapAction="http://tempuri.org/GetTestList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVisitStock">
+      <soap12:operation soapAction="http://tempuri.org/AddVisitStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerReport">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResceduleVisit">
+      <soap12:operation soapAction="http://tempuri.org/ResceduleVisit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVisitStatus">
+      <soap12:operation soapAction="http://tempuri.org/ChangeVisitStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelReason">
+      <soap12:operation soapAction="http://tempuri.org/GetCancelReason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackList">
+      <soap12:operation soapAction="http://tempuri.org/GetFeedbackList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinMaxPlan">
+      <soap12:operation soapAction="http://tempuri.org/GetMinMaxPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetVisitStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetDetailedAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VisitWebService">
+    <wsdl:port name="VisitWebServiceSoap" binding="tns:VisitWebServiceSoap">
+      <soap:address location="http://yakensolution.cloudapp.net/IDHServices/Services/VisitWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VisitWebServiceSoap12" binding="tns:VisitWebServiceSoap12">
+      <soap12:address location="http://yakensolution.cloudapp.net/IDHServices/Services/VisitWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

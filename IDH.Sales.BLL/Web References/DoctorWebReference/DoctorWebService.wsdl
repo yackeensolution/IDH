@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetDoctorList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_OwnList" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorListResult" type="tns:ArrayOfYKN_P_GetProfessionalList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetProfessionalList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetProfessionalList_Result" nillable="true" type="tns:YKN_P_GetProfessionalList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetProfessionalList_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="professionalGuid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="speciality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_MobileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="salesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Class" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrgList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrgListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrgListResult" type="tns:ArrayOfYKN_P_GetOrgList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetOrgList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetOrgList_Result" nillable="true" type="tns:YKN_P_GetOrgList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetOrgList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrgGUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSpecialities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecialitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpecialitiesResult" type="tns:ArrayOfYKN_P_GetSpecialityList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetSpecialityList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetSpecialityList_Result" nillable="true" type="tns:YKN_P_GetSpecialityList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetSpecialityList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpecialityID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DoctorName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_DoctorCategory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Mobile" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SpecialityID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDoctorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoctorOrgList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_DoctorID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorOrgListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorOrgListResult" type="tns:ArrayOfYKN_P_GetProfissionalOrgList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetProfissionalOrgList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetProfissionalOrgList_Result" nillable="true" type="tns:YKN_P_GetProfissionalOrgList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetProfissionalOrgList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrgGUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateOrg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_Status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_OrgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_OrgAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_OrgPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrgResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddDoctorOrg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_DoctorID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_OrgID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDoctorOrgResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUnAssignedDoctors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnAssignedDoctorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnAssignedDoctorsResult" type="tns:ArrayOfYKN_P_GetUnAssignedProfessionals_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetUnAssignedProfessionals_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetUnAssignedProfessionals_Result" nillable="true" type="tns:YKN_P_GetUnAssignedProfessionals_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetUnAssignedProfessionals_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="professionalGuid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AssignDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_DoctorID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDoctorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReassignDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProfessionalID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReassignDoctorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateSalesRepDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_DoctorID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSalesRepDoctorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoctorCategory">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoctorCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorCategoryResult" type="tns:ArrayOfYKN_PH_GetProfessionalTier_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_PH_GetProfessionalTier_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_PH_GetProfessionalTier_Result" nillable="true" type="tns:YKN_PH_GetProfessionalTier_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_PH_GetProfessionalTier_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TierValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDoctorListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorList" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrgList" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrgListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecialitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpecialities" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecialitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpecialitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDoctor" />
+  </wsdl:message>
+  <wsdl:message name="CreateDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorOrgListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorOrgList" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorOrgListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorOrgListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrgSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrg" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrgSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDoctorOrgSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDoctorOrg" />
+  </wsdl:message>
+  <wsdl:message name="AddDoctorOrgSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDoctorOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnAssignedDoctorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnAssignedDoctors" />
+  </wsdl:message>
+  <wsdl:message name="GetUnAssignedDoctorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnAssignedDoctorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignDoctor" />
+  </wsdl:message>
+  <wsdl:message name="AssignDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReassignDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:ReassignDoctor" />
+  </wsdl:message>
+  <wsdl:message name="ReassignDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:ReassignDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSalesRepDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSalesRepDoctor" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSalesRepDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSalesRepDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorCategory" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorCategoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DoctorWebServiceSoap">
+    <wsdl:operation name="GetDoctorList">
+      <wsdl:input message="tns:GetDoctorListSoapIn" />
+      <wsdl:output message="tns:GetDoctorListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgList">
+      <wsdl:input message="tns:GetOrgListSoapIn" />
+      <wsdl:output message="tns:GetOrgListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialities">
+      <wsdl:input message="tns:GetSpecialitiesSoapIn" />
+      <wsdl:output message="tns:GetSpecialitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDoctor">
+      <wsdl:input message="tns:CreateDoctorSoapIn" />
+      <wsdl:output message="tns:CreateDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorOrgList">
+      <wsdl:input message="tns:GetDoctorOrgListSoapIn" />
+      <wsdl:output message="tns:GetDoctorOrgListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrg">
+      <wsdl:input message="tns:CreateOrgSoapIn" />
+      <wsdl:output message="tns:CreateOrgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDoctorOrg">
+      <wsdl:input message="tns:AddDoctorOrgSoapIn" />
+      <wsdl:output message="tns:AddDoctorOrgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnAssignedDoctors">
+      <wsdl:input message="tns:GetUnAssignedDoctorsSoapIn" />
+      <wsdl:output message="tns:GetUnAssignedDoctorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignDoctor">
+      <wsdl:input message="tns:AssignDoctorSoapIn" />
+      <wsdl:output message="tns:AssignDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReassignDoctor">
+      <wsdl:input message="tns:ReassignDoctorSoapIn" />
+      <wsdl:output message="tns:ReassignDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesRepDoctor">
+      <wsdl:input message="tns:UpdateSalesRepDoctorSoapIn" />
+      <wsdl:output message="tns:UpdateSalesRepDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorCategory">
+      <wsdl:input message="tns:GetDoctorCategorySoapIn" />
+      <wsdl:output message="tns:GetDoctorCategorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DoctorWebServiceSoap" type="tns:DoctorWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDoctorList">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgList">
+      <soap:operation soapAction="http://tempuri.org/GetOrgList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialities">
+      <soap:operation soapAction="http://tempuri.org/GetSpecialities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDoctor">
+      <soap:operation soapAction="http://tempuri.org/CreateDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorOrgList">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorOrgList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrg">
+      <soap:operation soapAction="http://tempuri.org/CreateOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDoctorOrg">
+      <soap:operation soapAction="http://tempuri.org/AddDoctorOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnAssignedDoctors">
+      <soap:operation soapAction="http://tempuri.org/GetUnAssignedDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDoctor">
+      <soap:operation soapAction="http://tempuri.org/AssignDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReassignDoctor">
+      <soap:operation soapAction="http://tempuri.org/ReassignDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesRepDoctor">
+      <soap:operation soapAction="http://tempuri.org/UpdateSalesRepDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorCategory">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoctorWebServiceSoap12" type="tns:DoctorWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDoctorList">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgList">
+      <soap12:operation soapAction="http://tempuri.org/GetOrgList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialities">
+      <soap12:operation soapAction="http://tempuri.org/GetSpecialities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDoctor">
+      <soap12:operation soapAction="http://tempuri.org/CreateDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorOrgList">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorOrgList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrg">
+      <soap12:operation soapAction="http://tempuri.org/CreateOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDoctorOrg">
+      <soap12:operation soapAction="http://tempuri.org/AddDoctorOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnAssignedDoctors">
+      <soap12:operation soapAction="http://tempuri.org/GetUnAssignedDoctors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDoctor">
+      <soap12:operation soapAction="http://tempuri.org/AssignDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReassignDoctor">
+      <soap12:operation soapAction="http://tempuri.org/ReassignDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesRepDoctor">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSalesRepDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorCategory">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DoctorWebService">
+    <wsdl:port name="DoctorWebServiceSoap" binding="tns:DoctorWebServiceSoap">
+      <soap:address location="http://yakensolution.cloudapp.net/IDHServices/Services/DoctorWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoctorWebServiceSoap12" binding="tns:DoctorWebServiceSoap12">
+      <soap12:address location="http://yakensolution.cloudapp.net/IDHServices/Services/DoctorWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

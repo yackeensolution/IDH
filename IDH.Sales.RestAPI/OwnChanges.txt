@@ -1,0 +1,19 @@
+﻿- CompanyID will be (10 mokhtabar 15 elborg)
+- GetVisitTest have been replaced by GetTestList API and will take only the CompanyID as parameter
+- Visit Feedback and comment has been moved to EndVisit
+- Start Address and End Address [strings] have been added to EndVisit API. ex: 23 Elforqan st....
+- GetMissedVisits API is now take "Month" and "Year" parameter instead of "Day" parameter, and they are mandatory
+- GetTests API takes "CompanyID" as a parameter
+- GetDashBoard API takes additional parameters "Month","Year" and "RoleID"
+- Login API is now retrieving the UserDetails, so there is no need for calling GetUserDetails
+
+
+
+*Phase 2
+- GetDoctor API is now take  "RoleID" in addition to "CompanyID" as a parameters
+- GetDoctor API isn't return the doctor orgs anymore 
+- GetOrgList API take "CompanyID" as a parameter
+
+
+*Phase 3
+- 

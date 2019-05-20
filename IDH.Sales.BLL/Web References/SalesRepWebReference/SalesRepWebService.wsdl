@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetSalesRepList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_RoleID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesRepListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesRepListResult" type="tns:ArrayOfYKN_P_GetSalesRepList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetSalesRepList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetSalesRepList_Result" nillable="true" type="tns:YKN_P_GetSalesRepList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetSalesRepList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="salesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="salesRepGUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetManagerList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagerListResult" type="tns:ArrayOfYKN_P_GetManagerList_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetManagerList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetManagerList_Result" nillable="true" type="tns:YKN_P_GetManagerList_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetManagerList_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManagerGUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActivateDeactivate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ManagerID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_SalesRepID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StatusCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateDeactivateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeactivateManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_Guid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ManagerID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserGuid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_AlternateManagerID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StatusCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeactivateManagerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_ManagerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeamResult" type="tns:ArrayOfYKN_P_GetTeam_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetTeam_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetTeam_Result" nillable="true" type="tns:YKN_P_GetTeam_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetTeam_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesRepName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SalesRepID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManagerGuid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_Mobile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTeamManagers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamManagersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeamManagersResult" type="tns:ArrayOfYKN_P_GetTeamManagers_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYKN_P_GetTeamManagers_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YKN_P_GetTeamManagers_Result" nillable="true" type="tns:YKN_P_GetTeamManagers_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YKN_P_GetTeamManagers_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManagerID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManagerGuid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_Mobile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSalesRepListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesRepList" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesRepListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesRepListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagerList" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateDeactivateSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateDeactivate" />
+  </wsdl:message>
+  <wsdl:message name="ActivateDeactivateSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateDeactivateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeactivateManager" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeactivateManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeam" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamManagersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeamManagers" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamManagersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamManagersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SalesRepWebServiceSoap">
+    <wsdl:operation name="GetSalesRepList">
+      <wsdl:input message="tns:GetSalesRepListSoapIn" />
+      <wsdl:output message="tns:GetSalesRepListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerList">
+      <wsdl:input message="tns:GetManagerListSoapIn" />
+      <wsdl:output message="tns:GetManagerListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeactivate">
+      <wsdl:input message="tns:ActivateDeactivateSoapIn" />
+      <wsdl:output message="tns:ActivateDeactivateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateManager">
+      <wsdl:input message="tns:DeactivateManagerSoapIn" />
+      <wsdl:output message="tns:DeactivateManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeam">
+      <wsdl:input message="tns:GetTeamSoapIn" />
+      <wsdl:output message="tns:GetTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamManagers">
+      <wsdl:input message="tns:GetTeamManagersSoapIn" />
+      <wsdl:output message="tns:GetTeamManagersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SalesRepWebServiceSoap" type="tns:SalesRepWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSalesRepList">
+      <soap:operation soapAction="http://tempuri.org/GetSalesRepList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerList">
+      <soap:operation soapAction="http://tempuri.org/GetManagerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeactivate">
+      <soap:operation soapAction="http://tempuri.org/ActivateDeactivate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateManager">
+      <soap:operation soapAction="http://tempuri.org/DeactivateManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeam">
+      <soap:operation soapAction="http://tempuri.org/GetTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamManagers">
+      <soap:operation soapAction="http://tempuri.org/GetTeamManagers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SalesRepWebServiceSoap12" type="tns:SalesRepWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSalesRepList">
+      <soap12:operation soapAction="http://tempuri.org/GetSalesRepList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerList">
+      <soap12:operation soapAction="http://tempuri.org/GetManagerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeactivate">
+      <soap12:operation soapAction="http://tempuri.org/ActivateDeactivate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateManager">
+      <soap12:operation soapAction="http://tempuri.org/DeactivateManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeam">
+      <soap12:operation soapAction="http://tempuri.org/GetTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamManagers">
+      <soap12:operation soapAction="http://tempuri.org/GetTeamManagers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalesRepWebService">
+    <wsdl:port name="SalesRepWebServiceSoap" binding="tns:SalesRepWebServiceSoap">
+      <soap:address location="http://yakensolution.cloudapp.net/IDHServices/Services/SalesRepWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SalesRepWebServiceSoap12" binding="tns:SalesRepWebServiceSoap12">
+      <soap12:address location="http://yakensolution.cloudapp.net/IDHServices/Services/SalesRepWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

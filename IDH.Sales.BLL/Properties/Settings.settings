@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IDH.Sales.BLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IDH_Sales_BLL_VisitServiceReference_VisitWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://yakensolution.cloudapp.net/IDHServices/Services/VisitWebService.asmx</Value>
+    </Setting>
+    <Setting Name="IDH_Sales_BLL_SalesRepWebReference_SalesRepWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://yakensolution.cloudapp.net/IDHServices/Services/SalesRepWebService.asmx</Value>
+    </Setting>
+    <Setting Name="IDH_Sales_BLL_StockWebReference_StockWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://yakensolution.cloudapp.net/IDHServices/Services/StockWebService.asmx</Value>
+    </Setting>
+    <Setting Name="IDH_Sales_BLL_UserServiceReference_UserWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://yakensolution.cloudapp.net/IDHServices/Services/UserWebService.asmx</Value>
+    </Setting>
+    <Setting Name="IDH_Sales_BLL_DoctorWebReference_DoctorWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://yakensolution.cloudapp.net/IDHServices/Services/DoctorWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

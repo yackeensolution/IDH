@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SalesrepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="YKN_P_GetAVTDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetCustomerReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="endDate" Type="datetime" Mode="In" />
+          <Parameter Name="startDate" Type="datetime" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="RuleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetDashInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetDetailedRevReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SalesRepGUID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetManagerList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetMapLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Day" Type="datetime" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetMissedVisitList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetMonthPlan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetOrgList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetProfessionalList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ownlist" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetProfissionalOrgList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="ProfisonalGUID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetSalesRepList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleGUID" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserGUID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetSpecialityList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_P_GetStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="salesRepID" Type="nvarchar" Mode="In" />
+          <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ItemID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetStockCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetStockitemByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="salesRepID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetStockReportDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetTargetAchievedDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ManagerGUID" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetTeamManagers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetTestList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetUnAssignedProfessionals" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetUserData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pasword" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetUserDataGUID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserGUID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetVisitByDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Day" Type="datetime" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetVisitByMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetVisitStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_P_GetVisitTests" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_PH_GetCancelReasons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_PH_GetFeedbacklist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_PH_GetMaxMinPlan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_PH_GetProfessionalTier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_PH_GetVisitStatusList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="YKN_Push_ActivateDeactivateSalesRep" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ManagerGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StatusCode" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddOrganization" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="OrgName" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrgSdress" Type="nvarchar" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddProfessional" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="professionalName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProfessionalTier" Type="int" Mode="In" />
+          <Parameter Name="mobileNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="specialityID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddProfessionalOrg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProfessionalGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="OrgGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="type" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddtestFeedBack" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TestGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="feedBackId" Type="int" Mode="In" />
+          <Parameter Name="Comment" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddVisitHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitCode" Type="int" Mode="In" />
+          <Parameter Name="professionalGuid" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="OrgGuid" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGuid" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitDate" Type="datetime" Mode="In" />
+          <Parameter Name="VisitLevel" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AddvisitStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StockItemGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Qnty" Type="int" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="companyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AssignProfessional" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProfessionalGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="companyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_AssignStockItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ItemGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Qty" Type="int" Mode="In" />
+          <Parameter Name="companyId" Type="int" Mode="In" />
+          <Parameter Name="guid" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_ChangeVisitStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Visitstatus" Type="int" Mode="In" />
+          <Parameter Name="companyID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_DeactivateManager" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ManagerGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UltrnateManagerGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StatusCode" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_ReAssignProfessional" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProfessionalGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_ReschoduleVisit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitDate" Type="datetime" Mode="In" />
+          <Parameter Name="companyID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdateLock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Lock" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="employeeID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="lastupdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdatePeriod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Period" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdateSalesRepProfessional" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProfessionalGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SalesRepGUID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdateVisitDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+          <Parameter Name="StartLat" Type="decimal" Mode="In" />
+          <Parameter Name="endLat" Type="decimal" Mode="In" />
+          <Parameter Name="startlong" Type="decimal" Mode="In" />
+          <Parameter Name="endlong" Type="decimal" Mode="In" />
+          <Parameter Name="Visitstatus" Type="int" Mode="In" />
+          <Parameter Name="Comment" Type="nvarchar" Mode="In" />
+          <Parameter Name="feedBackId" Type="int" Mode="In" />
+          <Parameter Name="CompanyId" Type="int" Mode="In" />
+          <Parameter Name="startAdress" Type="nvarchar" Mode="In" />
+          <Parameter Name="EndAdress" Type="nvarchar" Mode="In" />
+          <Parameter Name="userGUID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="YKN_Push_UpdateVisitHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VisitGUID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="VisitDate" Type="datetime" Mode="In" />
+          <Parameter Name="VisitLevel" Type="int" Mode="In" />
+          <Parameter Name="Visitstatus" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="SalesrepModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SalesrepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="YKN_P_GetAVTDetails" ReturnType="Collection(SalesrepModel.YKN_P_GetAVTDetails_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetCustomerReport" ReturnType="Collection(SalesrepModel.YKN_P_GetCustomerReport_Result)">
+            <Parameter Name="endDate" Mode="In" Type="DateTime" />
+            <Parameter Name="startDate" Mode="In" Type="DateTime" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RuleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetDashInfo" ReturnType="Collection(SalesrepModel.YKN_P_GetDashInfo_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetManagerList" ReturnType="Collection(SalesrepModel.YKN_P_GetManagerList_Result)">
+          <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetMapLocation" ReturnType="Collection(SalesrepModel.YKN_P_GetMapLocation_Result)">
+            <Parameter Name="Day" Mode="In" Type="DateTime" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetMissedVisitList" ReturnType="Collection(SalesrepModel.YKN_P_GetMissedVisitList_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetMonthPlan" ReturnType="Collection(SalesrepModel.YKN_P_GetMonthPlan_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetOrgList" ReturnType="Collection(SalesrepModel.YKN_P_GetOrgList_Result)">
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetProfessionalList" ReturnType="Collection(SalesrepModel.YKN_P_GetProfessionalList_Result)">
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="ownlist" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetProfissionalOrgList" ReturnType="Collection(SalesrepModel.YKN_P_GetProfissionalOrgList_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="ProfisonalGUID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetSalesRepList" ReturnType="Collection(SalesrepModel.YKN_P_GetSalesRepList_Result)">
+            <Parameter Name="RoleGUID" Mode="In" Type="String" />
+            <Parameter Name="UserGUID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetSpecialityList" ReturnType="Collection(SalesrepModel.YKN_P_GetSpecialityList_Result)" />
+          <FunctionImport Name="YKN_P_GetStock" ReturnType="Collection(SalesrepModel.YKN_P_GetStock_Result)">
+            <Parameter Name="salesRepID" Mode="In" Type="String" />
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="ItemID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetStockCategory" ReturnType="Collection(SalesrepModel.YKN_P_GetStockCategory_Result)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetStockitemByCategory" ReturnType="Collection(SalesrepModel.YKN_P_GetStockitemByCategory_Result)">
+            <Parameter Name="CategoryID" Mode="In" Type="Guid" />
+            <Parameter Name="salesRepID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetStockReportDetails" ReturnType="Collection(SalesrepModel.YKN_P_GetStockReportDetails_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetTargetAchievedDetails" ReturnType="Collection(SalesrepModel.YKN_P_GetTargetAchievedDetails_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetTeam" ReturnType="Collection(SalesrepModel.YKN_P_GetTeam_Result)">
+            <Parameter Name="ManagerGUID" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetTeamManagers" ReturnType="Collection(SalesrepModel.YKN_P_GetTeamManagers_Result)">
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetTestList" ReturnType="Collection(SalesrepModel.YKN_P_GetTestList_Result)">
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetUnAssignedProfessionals" ReturnType="Collection(SalesrepModel.YKN_P_GetUnAssignedProfessionals_Result)">
+          <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetUserData" ReturnType="Collection(SalesrepModel.YKN_P_GetUserData_Result)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Pasword" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetUserDataGUID" ReturnType="Collection(SalesrepModel.YKN_P_GetUserDataGUID_Result)">
+          <Parameter Name="UserGUID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_PH_GetCancelReasons" ReturnType="Collection(SalesrepModel.YKN_PH_GetCancelReasons_Result)" />
+          <FunctionImport Name="YKN_PH_GetFeedbacklist" ReturnType="Collection(SalesrepModel.YKN_PH_GetFeedbacklist_Result)" />
+          <FunctionImport Name="YKN_PH_GetMaxMinPlan" ReturnType="Collection(SalesrepModel.YKN_PH_GetMaxMinPlan_Result)" />
+          <FunctionImport Name="YKN_PH_GetProfessionalTier" ReturnType="Collection(SalesrepModel.YKN_PH_GetProfessionalTier_Result)" />
+          <FunctionImport Name="YKN_PH_GetVisitStatusList" ReturnType="Collection(SalesrepModel.YKN_PH_GetVisitStatusList_Result)" />
+          <FunctionImport Name="YKN_Push_ActivateDeactivateSalesRep">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="ManagerGUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="Guid" />
+            <Parameter Name="StatusCode" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddOrganization">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="OrgName" Mode="In" Type="String" />
+            <Parameter Name="OrgSdress" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddProfessional">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="professionalName" Mode="In" Type="String" />
+            <Parameter Name="ProfessionalTier" Mode="In" Type="Int32" />
+            <Parameter Name="mobileNo" Mode="In" Type="String" />
+            <Parameter Name="specialityID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddProfessionalOrg">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="ProfessionalGUID" Mode="In" Type="Guid" />
+            <Parameter Name="OrgGUID" Mode="In" Type="Guid" />
+            <Parameter Name="type" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddtestFeedBack">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="TestGUID" Mode="In" Type="Guid" />
+            <Parameter Name="feedBackId" Mode="In" Type="Int32" />
+            <Parameter Name="Comment" Mode="In" Type="String" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddVisitHeader">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="VisitCode" Mode="In" Type="Int32" />
+            <Parameter Name="professionalGuid" Mode="In" Type="Guid" />
+            <Parameter Name="OrgGuid" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGuid" Mode="In" Type="Guid" />
+            <Parameter Name="VisitDate" Mode="In" Type="DateTime" />
+            <Parameter Name="VisitLevel" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AddvisitStock">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="StockItemGUID" Mode="In" Type="Guid" />
+            <Parameter Name="Qnty" Mode="In" Type="Int32" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="companyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AssignProfessional">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="ProfessionalGUID" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="Guid" />
+            <Parameter Name="companyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_AssignStockItem">
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="ItemGUID" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="Guid" />
+            <Parameter Name="Qty" Mode="In" Type="Int32" />
+            <Parameter Name="companyId" Mode="In" Type="Int32" />
+            <Parameter Name="guid" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_ChangeVisitStatus">
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="Visitstatus" Mode="In" Type="Int32" />
+            <Parameter Name="companyID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_DeactivateManager">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="ManagerGUID" Mode="In" Type="Guid" />
+            <Parameter Name="UltrnateManagerGUID" Mode="In" Type="Guid" />
+            <Parameter Name="StatusCode" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_ReAssignProfessional">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserGUID" Mode="In" Type="Guid" />
+            <Parameter Name="ProfessionalGUID" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_ReschoduleVisit">
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="VisitDate" Mode="In" Type="DateTime" />
+            <Parameter Name="companyID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdateSalesRepProfessional">
+            <Parameter Name="GUID" Mode="In" Type="Guid" />
+            <Parameter Name="ProfessionalGUID" Mode="In" Type="Guid" />
+            <Parameter Name="SalesRepGUID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdateVisitDetails">
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="StartLat" Mode="In" Type="Decimal" />
+            <Parameter Name="endLat" Mode="In" Type="Decimal" />
+            <Parameter Name="startlong" Mode="In" Type="Decimal" />
+            <Parameter Name="endlong" Mode="In" Type="Decimal" />
+            <Parameter Name="Visitstatus" Mode="In" Type="Int32" />
+            <Parameter Name="Comment" Mode="In" Type="String" />
+            <Parameter Name="feedBackId" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="startAdress" Mode="In" Type="String" />
+            <Parameter Name="EndAdress" Mode="In" Type="String" />
+            <Parameter Name="userGUID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdateVisitHeader">
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="VisitDate" Mode="In" Type="DateTime" />
+            <Parameter Name="VisitLevel" Mode="In" Type="Int32" />
+            <Parameter Name="Visitstatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetDetailedRevReport" ReturnType="Collection(SalesrepModel.YKN_P_GetDetailedRevReport_Result)">
+            <Parameter Name="SalesRepGUID" Mode="In" Type="String" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="RoleID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetVisitByMonth" ReturnType="Collection(SalesrepModel.YKN_P_GetVisitByMonth_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetVisitStock" ReturnType="Collection(SalesrepModel.YKN_P_GetVisitStock_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetVisitTests" ReturnType="Collection(SalesrepModel.YKN_P_GetVisitTests_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="VisitGUID" Mode="In" Type="Guid" />
+            <Parameter Name="UserID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_P_GetVisitByDay" ReturnType="Collection(SalesrepModel.YKN_P_GetVisitByDay_Result)">
+            <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="Day" Mode="In" Type="DateTime" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdateLock">
+            <Parameter Name="Lock" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="employeeID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdatePassword">
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="lastupdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="YKN_Push_UpdatePeriod">
+            <Parameter Name="Period" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="YKN_P_GetAVTDetails_Result">
+          <Property Type="String" Name="SalesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DirectManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="VisitsNo" Nullable="true" />
+          <Property Type="Int32" Name="AVT" Nullable="true" />
+          <Property Type="Int32" Name="totalTime" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetCustomerReport_Result">
+          <Property Type="DateTime" Name="VisitDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="new_VisitFeedback" Nullable="true" />
+          <Property Type="String" Name="new_CommentOntheVisit" Nullable="true" />
+          <Property Type="String" Name="testname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="testFeedback" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="TestComment" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="salesrepname" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="salesrepid" Nullable="true" />
+          <Property Type="Guid" Name="managerid" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetDashInfo_Result">
+          <Property Type="Int32" Name="TargetVisits" Nullable="true" />
+          <Property Type="Int32" Name="ActualVisits" Nullable="true" />
+          <Property Type="Decimal" Name="TargetAmount" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="ActualAmount" Nullable="true" Precision="19" />
+          <Property Type="Int32" Name="AVT" Nullable="true" />
+          <Property Type="Int32" Name="TargetAVT" Nullable="false" />
+          <Property Type="Int32" Name="Plannedvisits" Nullable="true" />
+          <Property Type="Int32" Name="Missedvisits" Nullable="true" />
+          <Property Type="Int32" Name="TotalStock" Nullable="true" />
+          <Property Type="Int32" Name="TotalBalance" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetManagerList_Result">
+          <Property Type="String" Name="ManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="ManagerGUID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetMapLocation_Result">
+          <Property Type="Decimal" Name="new_GPSXcheckIn" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="Decimal" Name="new_GPSYcheckin" Nullable="true" Precision="23" Scale="10" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetMissedVisitList_Result">
+          <Property Type="Guid" Name="VisitId" Nullable="false" />
+          <Property Type="DateTime" Name="new_VisitDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="professional" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="organization" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetMonthPlan_Result">
+          <Property Type="Guid" Name="new_ProfessionalNameId" Nullable="true" />
+          <Property Type="String" Name="professionalName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="new_OrganizationNameId" Nullable="true" />
+          <Property Type="String" Name="orgName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="new_VisitDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="visitLevelId" Nullable="true" />
+          <Property Type="Guid" Name="VisitCode" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetOrgList_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="adress" Nullable="true" MaxLength="500" />
+          <Property Type="Guid" Name="OrgGUID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetProfessionalList_Result">
+          <Property Type="Guid" Name="professionalGuid" Nullable="false" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="speciality" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="new_MobileNumber" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Class" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetProfissionalOrgList_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="OrgGUID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetSalesRepList_Result">
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="salesRepGUID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetSpecialityList_Result">
+          <Property Type="String" Name="SpecialityName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="SpecialityID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetStock_Result">
+          <Property Type="String" Name="itemName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="StartBalance" Nullable="true" />
+          <Property Type="Int32" Name="new_Balance" Nullable="true" />
+          <Property Type="Guid" Name="categoryID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetStockCategory_Result">
+          <Property Type="String" Name="categoryName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="CategoryID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetStockitemByCategory_Result">
+          <Property Type="String" Name="StockitemName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="StockItemGUID" Nullable="true" />
+          <Property Type="Int32" Name="Balance" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetStockReportDetails_Result">
+          <Property Type="String" Name="itemName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="itemGUID" Nullable="false" />
+          <Property Type="Int32" Name="TotalStock" Nullable="true" />
+          <Property Type="Int32" Name="availableStock" Nullable="true" />
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DirectManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="VisitNo" Nullable="true" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetTargetAchievedDetails_Result">
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DirectManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="new_TargetVisits" Nullable="true" />
+          <Property Type="Int32" Name="new_ActualVisits" Nullable="true" />
+          <Property Type="Decimal" Name="new_TargetAmount" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="new_ActualAmount" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetTeam_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="String" Name="SalesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="SalesRepID" Nullable="false" />
+          <Property Type="Guid" Name="ManagerGuid" Nullable="true" />
+          <Property Type="String" Name="ManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="new_Mobile" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="ActiveDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetTeamManagers_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="String" Name="ManagerName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ManagerID" Nullable="true" MaxLength="15" />
+          <Property Type="Guid" Name="ManagerGuid" Nullable="false" />
+          <Property Type="String" Name="new_Mobile" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="ActiveDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetTestList_Result">
+          <Property Type="String" Name="TestName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="TestGUID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetUnAssignedProfessionals_Result">
+          <Property Type="Guid" Name="professionalGuid" Nullable="false" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetUserData_Result">
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="UserGUID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="ImageURL" Nullable="false" MaxLength="26" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="15" />
+          <Property Type="Guid" Name="RuleGUID" Nullable="false" />
+          <Property Type="Int32" Name="RuleName" Nullable="true" />
+          <Property Type="Guid" Name="ManagerGUID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetUserDataGUID_Result">
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="UserGUID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="ImageURL" Nullable="false" MaxLength="26" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="15" />
+          <Property Type="Guid" Name="RuleGUID" Nullable="false" />
+          <Property Type="Int32" Name="RuleName" Nullable="true" />
+          <Property Type="Guid" Name="ManagerGUID" Nullable="true" />
+          <Property Type="String" Name="Managername" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Lock" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_PH_GetCancelReasons_Result">
+          <Property Type="String" Name="ReasonValue" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="YKN_PH_GetFeedbacklist_Result">
+          <Property Type="String" Name="Feedback" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="YKN_PH_GetMaxMinPlan_Result">
+          <Property Type="Int32" Name="MinVisits" Nullable="false" />
+          <Property Type="Int32" Name="MaxVisits" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_PH_GetProfessionalTier_Result">
+          <Property Type="String" Name="TierValue" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="YKN_PH_GetVisitStatusList_Result">
+          <Property Type="String" Name="VisitStatus" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetDetailedRevReport_Result">
+          <Property Type="Guid" Name="SalesRepID" Nullable="false" />
+          <Property Type="String" Name="SalesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="professionalGuid" Nullable="false" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="speciality" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="new_MobileNumber" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="Class" Nullable="true" />
+          <Property Type="String" Name="MonthlyRevenue" Nullable="false" MaxLength="7" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetVisitByMonth1_Result">
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="salesRepID" Nullable="false" />
+          <Property Type="Guid" Name="new_mdsalesrepvisitId" Nullable="false" />
+          <Property Type="Int32" Name="new_VisitLevel" Nullable="true" />
+          <Property Type="Guid" Name="organizationid" Nullable="true" />
+          <Property Type="Guid" Name="professionalid" Nullable="true" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="specility" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OrgName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="new_GPSPosX" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="Decimal" Name="new_GPSPosY" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="String" Name="new_PhoneNumber" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="VisitDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statuscode" Nullable="true" />
+          <Property Type="Guid" Name="VisitGUID" Nullable="false" />
+          <Property Type="Int32" Name="VisitLevel" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetVisitByMonth_Result">
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="salesRepID" Nullable="false" />
+          <Property Type="Guid" Name="new_mdsalesrepvisitId" Nullable="false" />
+          <Property Type="Int32" Name="new_VisitLevel" Nullable="true" />
+          <Property Type="Guid" Name="organizationid" Nullable="true" />
+          <Property Type="Guid" Name="professionalid" Nullable="true" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="specility" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OrgName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="new_GPSPosX" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="Decimal" Name="new_GPSPosY" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="String" Name="new_PhoneNumber" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="VisitDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statuscode" Nullable="true" />
+          <Property Type="Guid" Name="VisitGUID" Nullable="false" />
+          <Property Type="Int32" Name="VisitLevel" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetVisitStock_Result">
+          <Property Type="Guid" Name="ItemID" Nullable="false" />
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="amount" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetVisitTests_Result">
+          <Property Type="Int32" Name="TestID" Nullable="false" />
+          <Property Type="String" Name="TestName" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="VisitFeedback" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="TestComment" Nullable="false" MaxLength="7" />
+        </ComplexType>
+        <ComplexType Name="YKN_P_GetVisitByDay_Result">
+          <Property Type="Guid" Name="new_mdrepmasterId" Nullable="false" />
+          <Property Type="String" Name="salesRepName" Nullable="true" MaxLength="100" />
+          <Property Type="Guid" Name="new_mdsalesrepvisitId" Nullable="false" />
+          <Property Type="String" Name="ProfessionalName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="specility" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OrgName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="new_GPSPosX" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="Decimal" Name="new_GPSPosY" Nullable="true" Precision="23" Scale="10" />
+          <Property Type="String" Name="new_PhoneNumber" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="VisitDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statuscode" Nullable="true" />
+          <Property Type="Guid" Name="VisitGUID" Nullable="false" />
+          <Property Type="String" Name="visitComment" Nullable="true" />
+          <Property Type="Int32" Name="new_VisitFeedback" Nullable="true" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SalesrepModelStoreContainer" CdmEntityContainer="Entities" >
+          <FunctionImportMapping FunctionImportName="YKN_P_GetAVTDetails" FunctionName="SalesrepModel.Store.YKN_P_GetAVTDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetAVTDetails_Result">
+                <ScalarProperty Name="SalesRepName" ColumnName="SalesRepName" />
+                <ScalarProperty Name="DirectManagerName" ColumnName="DirectManagerName" />
+                <ScalarProperty Name="VisitsNo" ColumnName="VisitsNo" />
+                <ScalarProperty Name="AVT" ColumnName="AVT" />
+                <ScalarProperty Name="totalTime" ColumnName="totalTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetCustomerReport" FunctionName="SalesrepModel.Store.YKN_P_GetCustomerReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetCustomerReport_Result">
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+                <ScalarProperty Name="new_VisitFeedback" ColumnName="new_VisitFeedback" />
+                <ScalarProperty Name="new_CommentOntheVisit" ColumnName="new_CommentOntheVisit" />
+                <ScalarProperty Name="testname" ColumnName="testname" />
+                <ScalarProperty Name="testFeedback" ColumnName="testFeedback" />
+                <ScalarProperty Name="TestComment" ColumnName="TestComment" />
+                <ScalarProperty Name="salesrepname" ColumnName="salesrepname" />
+                <ScalarProperty Name="salesrepid" ColumnName="salesrepid" />
+                <ScalarProperty Name="managerid" ColumnName="managerid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetDashInfo" FunctionName="SalesrepModel.Store.YKN_P_GetDashInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetDashInfo_Result">
+                <ScalarProperty Name="TargetVisits" ColumnName="TargetVisits" />
+                <ScalarProperty Name="ActualVisits" ColumnName="ActualVisits" />
+                <ScalarProperty Name="TargetAmount" ColumnName="TargetAmount" />
+                <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
+                <ScalarProperty Name="AVT" ColumnName="AVT" />
+                <ScalarProperty Name="TargetAVT" ColumnName="TargetAVT" />
+                <ScalarProperty Name="Plannedvisits" ColumnName="Plannedvisits" />
+                <ScalarProperty Name="Missedvisits" ColumnName="Missedvisits" />
+                <ScalarProperty Name="TotalStock" ColumnName="TotalStock" />
+                <ScalarProperty Name="TotalBalance" ColumnName="TotalBalance" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetManagerList" FunctionName="SalesrepModel.Store.YKN_P_GetManagerList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetManagerList_Result">
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="ManagerGUID" ColumnName="ManagerGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetMapLocation" FunctionName="SalesrepModel.Store.YKN_P_GetMapLocation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetMapLocation_Result">
+                <ScalarProperty Name="new_GPSXcheckIn" ColumnName="new_GPSXcheckIn" />
+                <ScalarProperty Name="new_GPSYcheckin" ColumnName="new_GPSYcheckin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetMissedVisitList" FunctionName="SalesrepModel.Store.YKN_P_GetMissedVisitList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetMissedVisitList_Result">
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="new_VisitDate" ColumnName="new_VisitDate" />
+                <ScalarProperty Name="professional" ColumnName="professional" />
+                <ScalarProperty Name="organization" ColumnName="organization" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetMonthPlan" FunctionName="SalesrepModel.Store.YKN_P_GetMonthPlan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetMonthPlan_Result">
+                <ScalarProperty Name="new_ProfessionalNameId" ColumnName="new_ProfessionalNameId" />
+                <ScalarProperty Name="professionalName" ColumnName="professionalName" />
+                <ScalarProperty Name="new_OrganizationNameId" ColumnName="new_OrganizationNameId" />
+                <ScalarProperty Name="orgName" ColumnName="orgName" />
+                <ScalarProperty Name="new_VisitDate" ColumnName="new_VisitDate" />
+                <ScalarProperty Name="visitLevelId" ColumnName="visitLevelId" />
+                <ScalarProperty Name="VisitCode" ColumnName="VisitCode" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetOrgList" FunctionName="SalesrepModel.Store.YKN_P_GetOrgList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetOrgList_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="OrgGUID" ColumnName="OrgGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetProfessionalList" FunctionName="SalesrepModel.Store.YKN_P_GetProfessionalList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetProfessionalList_Result">
+                <ScalarProperty Name="professionalGuid" ColumnName="professionalGuid" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+                <ScalarProperty Name="speciality" ColumnName="speciality" />
+                <ScalarProperty Name="new_MobileNumber" ColumnName="new_MobileNumber" />
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetProfissionalOrgList" FunctionName="SalesrepModel.Store.YKN_P_GetProfissionalOrgList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetProfissionalOrgList_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="OrgGUID" ColumnName="OrgGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetSalesRepList" FunctionName="SalesrepModel.Store.YKN_P_GetSalesRepList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetSalesRepList_Result">
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="salesRepGUID" ColumnName="salesRepGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetSpecialityList" FunctionName="SalesrepModel.Store.YKN_P_GetSpecialityList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetSpecialityList_Result">
+                <ScalarProperty Name="SpecialityName" ColumnName="SpecialityName" />
+                <ScalarProperty Name="SpecialityID" ColumnName="SpecialityID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetStock" FunctionName="SalesrepModel.Store.YKN_P_GetStock">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetStock_Result">
+                <ScalarProperty Name="itemName" ColumnName="itemName" />
+                <ScalarProperty Name="StartBalance" ColumnName="StartBalance" />
+                <ScalarProperty Name="new_Balance" ColumnName="new_Balance" />
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetStockCategory" FunctionName="SalesrepModel.Store.YKN_P_GetStockCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetStockCategory_Result">
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetStockitemByCategory" FunctionName="SalesrepModel.Store.YKN_P_GetStockitemByCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetStockitemByCategory_Result">
+                <ScalarProperty Name="StockitemName" ColumnName="StockitemName" />
+                <ScalarProperty Name="StockItemGUID" ColumnName="StockItemGUID" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetStockReportDetails" FunctionName="SalesrepModel.Store.YKN_P_GetStockReportDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetStockReportDetails_Result">
+                <ScalarProperty Name="itemName" ColumnName="itemName" />
+                <ScalarProperty Name="itemGUID" ColumnName="itemGUID" />
+                <ScalarProperty Name="TotalStock" ColumnName="TotalStock" />
+                <ScalarProperty Name="availableStock" ColumnName="availableStock" />
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="DirectManagerName" ColumnName="DirectManagerName" />
+                <ScalarProperty Name="VisitNo" ColumnName="VisitNo" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetTargetAchievedDetails" FunctionName="SalesrepModel.Store.YKN_P_GetTargetAchievedDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetTargetAchievedDetails_Result">
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="DirectManagerName" ColumnName="DirectManagerName" />
+                <ScalarProperty Name="new_TargetVisits" ColumnName="new_TargetVisits" />
+                <ScalarProperty Name="new_ActualVisits" ColumnName="new_ActualVisits" />
+                <ScalarProperty Name="new_TargetAmount" ColumnName="new_TargetAmount" />
+                <ScalarProperty Name="new_ActualAmount" ColumnName="new_ActualAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetTeam" FunctionName="SalesrepModel.Store.YKN_P_GetTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetTeam_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="SalesRepName" ColumnName="SalesRepName" />
+                <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+                <ScalarProperty Name="ManagerGuid" ColumnName="ManagerGuid" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="new_Mobile" ColumnName="new_Mobile" />
+                <ScalarProperty Name="ActiveDate" ColumnName="ActiveDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetTeamManagers" FunctionName="SalesrepModel.Store.YKN_P_GetTeamManagers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetTeamManagers_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="ManagerGuid" ColumnName="ManagerGuid" />
+                <ScalarProperty Name="new_Mobile" ColumnName="new_Mobile" />
+                <ScalarProperty Name="ActiveDate" ColumnName="ActiveDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetTestList" FunctionName="SalesrepModel.Store.YKN_P_GetTestList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetTestList_Result">
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="TestGUID" ColumnName="TestGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetUnAssignedProfessionals" FunctionName="SalesrepModel.Store.YKN_P_GetUnAssignedProfessionals">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetUnAssignedProfessionals_Result">
+                <ScalarProperty Name="professionalGuid" ColumnName="professionalGuid" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetUserData" FunctionName="SalesrepModel.Store.YKN_P_GetUserData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetUserData_Result">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RuleGUID" ColumnName="RuleGUID" />
+                <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+                <ScalarProperty Name="ManagerGUID" ColumnName="ManagerGUID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetUserDataGUID" FunctionName="SalesrepModel.Store.YKN_P_GetUserDataGUID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetUserDataGUID_Result">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RuleGUID" ColumnName="RuleGUID" />
+                <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+                <ScalarProperty Name="ManagerGUID" ColumnName="ManagerGUID" />
+                <ScalarProperty Name="Managername" ColumnName="Managername" />
+                <ScalarProperty Name="Lock" ColumnName="Lock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_PH_GetCancelReasons" FunctionName="SalesrepModel.Store.YKN_PH_GetCancelReasons">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_PH_GetCancelReasons_Result">
+                <ScalarProperty Name="ReasonValue" ColumnName="ReasonValue" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_PH_GetFeedbacklist" FunctionName="SalesrepModel.Store.YKN_PH_GetFeedbacklist">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_PH_GetFeedbacklist_Result">
+                <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_PH_GetMaxMinPlan" FunctionName="SalesrepModel.Store.YKN_PH_GetMaxMinPlan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_PH_GetMaxMinPlan_Result">
+                <ScalarProperty Name="MinVisits" ColumnName="MinVisits" />
+                <ScalarProperty Name="MaxVisits" ColumnName="MaxVisits" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_PH_GetProfessionalTier" FunctionName="SalesrepModel.Store.YKN_PH_GetProfessionalTier">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_PH_GetProfessionalTier_Result">
+                <ScalarProperty Name="TierValue" ColumnName="TierValue" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_PH_GetVisitStatusList" FunctionName="SalesrepModel.Store.YKN_PH_GetVisitStatusList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_PH_GetVisitStatusList_Result">
+                <ScalarProperty Name="VisitStatus" ColumnName="VisitStatus" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_Push_ActivateDeactivateSalesRep" FunctionName="SalesrepModel.Store.YKN_Push_ActivateDeactivateSalesRep" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddOrganization" FunctionName="SalesrepModel.Store.YKN_Push_AddOrganization" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddProfessional" FunctionName="SalesrepModel.Store.YKN_Push_AddProfessional" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddProfessionalOrg" FunctionName="SalesrepModel.Store.YKN_Push_AddProfessionalOrg" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddtestFeedBack" FunctionName="SalesrepModel.Store.YKN_Push_AddtestFeedBack" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddVisitHeader" FunctionName="SalesrepModel.Store.YKN_Push_AddVisitHeader" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AddvisitStock" FunctionName="SalesrepModel.Store.YKN_Push_AddvisitStock" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AssignProfessional" FunctionName="SalesrepModel.Store.YKN_Push_AssignProfessional" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_AssignStockItem" FunctionName="SalesrepModel.Store.YKN_Push_AssignStockItem" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_ChangeVisitStatus" FunctionName="SalesrepModel.Store.YKN_Push_ChangeVisitStatus" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_DeactivateManager" FunctionName="SalesrepModel.Store.YKN_Push_DeactivateManager" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_ReAssignProfessional" FunctionName="SalesrepModel.Store.YKN_Push_ReAssignProfessional" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_ReschoduleVisit" FunctionName="SalesrepModel.Store.YKN_Push_ReschoduleVisit" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdateSalesRepProfessional" FunctionName="SalesrepModel.Store.YKN_Push_UpdateSalesRepProfessional" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdateVisitDetails" FunctionName="SalesrepModel.Store.YKN_Push_UpdateVisitDetails" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdateVisitHeader" FunctionName="SalesrepModel.Store.YKN_Push_UpdateVisitHeader" />
+          <FunctionImportMapping FunctionImportName="YKN_P_GetDetailedRevReport" FunctionName="SalesrepModel.Store.YKN_P_GetDetailedRevReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetDetailedRevReport_Result">
+                <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+                <ScalarProperty Name="SalesRepName" ColumnName="SalesRepName" />
+                <ScalarProperty Name="professionalGuid" ColumnName="professionalGuid" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+                <ScalarProperty Name="speciality" ColumnName="speciality" />
+                <ScalarProperty Name="new_MobileNumber" ColumnName="new_MobileNumber" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="MonthlyRevenue" ColumnName="MonthlyRevenue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetVisitByMonth" FunctionName="SalesrepModel.Store.YKN_P_GetVisitByMonth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetVisitByMonth_Result">
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="salesRepID" ColumnName="salesRepID" />
+                <ScalarProperty Name="new_mdsalesrepvisitId" ColumnName="new_mdsalesrepvisitId" />
+                <ScalarProperty Name="new_VisitLevel" ColumnName="new_VisitLevel" />
+                <ScalarProperty Name="organizationid" ColumnName="organizationid" />
+                <ScalarProperty Name="professionalid" ColumnName="professionalid" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+                <ScalarProperty Name="specility" ColumnName="specility" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="new_GPSPosX" ColumnName="new_GPSPosX" />
+                <ScalarProperty Name="new_GPSPosY" ColumnName="new_GPSPosY" />
+                <ScalarProperty Name="new_PhoneNumber" ColumnName="new_PhoneNumber" />
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+                <ScalarProperty Name="statuscode" ColumnName="statuscode" />
+                <ScalarProperty Name="VisitGUID" ColumnName="VisitGUID" />
+                <ScalarProperty Name="VisitLevel" ColumnName="VisitLevel" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetVisitStock" FunctionName="SalesrepModel.Store.YKN_P_GetVisitStock">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetVisitStock_Result">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetVisitTests" FunctionName="SalesrepModel.Store.YKN_P_GetVisitTests">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetVisitTests_Result">
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="VisitFeedback" ColumnName="VisitFeedback" />
+                <ScalarProperty Name="TestComment" ColumnName="TestComment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_P_GetVisitByDay" FunctionName="SalesrepModel.Store.YKN_P_GetVisitByDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalesrepModel.YKN_P_GetVisitByDay_Result">
+                <ScalarProperty Name="new_mdrepmasterId" ColumnName="new_mdrepmasterId" />
+                <ScalarProperty Name="salesRepName" ColumnName="salesRepName" />
+                <ScalarProperty Name="new_mdsalesrepvisitId" ColumnName="new_mdsalesrepvisitId" />
+                <ScalarProperty Name="ProfessionalName" ColumnName="ProfessionalName" />
+                <ScalarProperty Name="specility" ColumnName="specility" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="new_GPSPosX" ColumnName="new_GPSPosX" />
+                <ScalarProperty Name="new_GPSPosY" ColumnName="new_GPSPosY" />
+                <ScalarProperty Name="new_PhoneNumber" ColumnName="new_PhoneNumber" />
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+                <ScalarProperty Name="statuscode" ColumnName="statuscode" />
+                <ScalarProperty Name="VisitGUID" ColumnName="VisitGUID" />
+                <ScalarProperty Name="visitComment" ColumnName="visitComment" />
+                <ScalarProperty Name="new_VisitFeedback" ColumnName="new_VisitFeedback" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdateLock" FunctionName="SalesrepModel.Store.YKN_Push_UpdateLock" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdatePassword" FunctionName="SalesrepModel.Store.YKN_Push_UpdatePassword" />
+          <FunctionImportMapping FunctionImportName="YKN_Push_UpdatePeriod" FunctionName="SalesrepModel.Store.YKN_Push_UpdatePeriod" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
